@@ -8,13 +8,14 @@ package Models;
  *
  * @author lenovo
  */
-public class Space {
+public class Space implements Component{
     public int width;
     
     public Space(int widht){
         this.width = widht;
     }
     
+    @Override
     public void draw(){
         System.out.println("|"+" ".repeat(width)+"|");
     }

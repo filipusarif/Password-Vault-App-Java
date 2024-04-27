@@ -10,7 +10,7 @@ import java.util.Scanner;
  *
  * @author lenovo
  */
-public class Input {
+public class Input implements Component{
     public String label;
     private Scanner input = new Scanner(System.in);;
     private String value;
@@ -18,7 +18,7 @@ public class Input {
     public Input(String label){
         this.label = label;
     }
-    
+    @Override
     public void draw(){
         System.out.print("|  " + label + " : ");
     }

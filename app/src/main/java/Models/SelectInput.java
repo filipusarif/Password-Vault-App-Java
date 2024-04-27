@@ -8,7 +8,7 @@ package Models;
  *
  * @author lenovo
  */
-public class SelectInput {
+public class SelectInput implements Component{
     public String [] selection;
     public int width;
     public String label;
@@ -21,7 +21,7 @@ public class SelectInput {
         this.width = width;
         input = new Input("Pilihan");
     }
-    
+    @Override
     public void draw(){
         new Label(label,width).draw();
         int i=1;

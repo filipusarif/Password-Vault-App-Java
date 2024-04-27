@@ -8,7 +8,7 @@ package Models;
  *
  * @author lenovo
  */
-public class Label {
+public class Label implements Component{
     public int width;
     public String text;
     
@@ -16,7 +16,7 @@ public class Label {
         this.width = width;
         this.text = text;
     }
-    
+    @Override
     public void draw(){
         if(text.length()>width){
             System.out.println("|"+" ".repeat(2)+ text + " "+"|");

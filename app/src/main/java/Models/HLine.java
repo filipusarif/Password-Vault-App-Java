@@ -8,13 +8,13 @@ package Models;
  *
  * @author lenovo
  */
-public class HLine {
+public class HLine implements Component{
     public int width;
     
     public HLine(int width){
         this.width = width;
     }
-    
+    @Override
     public void draw(){
         System.out.println("+" + "=".repeat(width) + "+");
     }

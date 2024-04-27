@@ -13,7 +13,7 @@ public class App {
 
     public static void main(String[] args)throws Exception {
         DataPassword.loadCSVData();
-        new MainPage("Aplikasi Password Vault", 70).draw();
+        new MainPage(70).draw();
     }
 }
 

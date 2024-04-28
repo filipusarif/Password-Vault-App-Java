@@ -11,33 +11,34 @@ import static Models.DataPassword.passData;
  * @author lenovo
  */
 public class InputPage extends BasePage {
-    private  Input judulInput;
+    private  Input nameInput;
     private  Input usernameInput;
     private  Input passwordInput;
-    private  SelectInput kategoriInput;
+    private  SelectInput catInput;
+    private PasswordStore passStr;
+
 
     public InputPage( int width) {
         super("Input Page", width);
-        this.judulInput = new Input("Judul Password");
+        this.nameInput = new Input("Judul Password");
         this.usernameInput = new Input("Username");
         this.passwordInput = new Input("Password");
         String[] kategoriOptions = {"Belum terkategori", "Aplikasi Web", "Aplikasi Mobile", "Akun Lainnya"};
-        this.kategoriInput = new SelectInput("Kategori", kategoriOptions, width);
+        this.catInput = new SelectInput("Kategori", kategoriOptions, width);
     }
 
     @Override
     public void drawContent() {
-        this.judulInput.draw();
-        String judul = judulInput.getValue();
+        this.nameInput.draw();
+        String judul = nameInput.getValue();
         this.usernameInput.draw();
         String username = usernameInput.getValue();
         this.passwordInput.draw();
         String password = passwordInput.getValue();
-        this.kategoriInput.draw();
-        int kategori = kategoriInput.getValue();
-        
-        PasswordStore passwordStore = new PasswordStore(judul, username, password, kategori);
-        DataPassword.passData.add(passwordStore);
+        this.catInput.draw();
+        int kategori = catInput.getValue();
+        passStr = new PasswordStore(judul, username, password, kategori-1);
+        DataPassword.passData.add(passStr);
 
         new MainPage(width).draw(); // Kembali ke halaman utama setelah input selesai
     }
